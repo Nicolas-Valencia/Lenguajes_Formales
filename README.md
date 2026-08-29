@@ -4,9 +4,9 @@
 ### Valencia | Ángel | Rincón
 
 
-## � ¿Qué es `scriptcol`?
+## � ¿Qué es `COLSCRIPT`?
 
-`scriptcol` es un lenguaje de programación de sintaxis declarativa inspirado en el español. Su diseño prioriza la legibilidad natural, permitiendo que las instrucciones se lean de forma cercana al lenguaje cotidiano sin perder la estructura formal de un lenguaje de programación.
+`COLSCRIPT` es un lenguaje de programación de sintaxis declarativa inspirado en el español. Su diseño prioriza la legibilidad natural, permitiendo que las instrucciones se lean de forma cercana al lenguaje cotidiano sin perder la estructura formal de un lenguaje de programación.
 
 ---
 
