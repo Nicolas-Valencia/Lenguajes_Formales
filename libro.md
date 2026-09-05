@@ -1,0 +1,3 @@
+Según lo investigado en libros:
+
+En el Capítulo 1 del libro "Introduction to Automata Theory, Languages, and Computation" de John E. Hopcroft, Rajeev Motwani, Jeffrey D. Ullman, se explica que un lenguaje formal funciona como un sistema matemático preciso y sin ambigüedades. Todo parte de un alfabeto compuesto por símbolos básicos o "tokens" que se combinan para formar cadenas de texto, definiendo formalmente el lenguaje como "un conjunto de cadenas elegidas de un alfabeto fijo". Para mantener una estructura clara y sin dobles interpretaciones, se aplican reglas matemáticas estrictas que determinan matemáticamente qué combinaciones de tokens son válidas (pertenecen al lenguaje) y cuáles son inválidas o errores de sintaxis.
