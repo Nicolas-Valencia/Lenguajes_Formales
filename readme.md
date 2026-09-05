@@ -222,3 +222,24 @@ Catálogo completo de las variables definidas en los ejemplos de las 15 reglas, 
 | `cantidad`           | `int`     | `5`                |
 | `nota`               | `double`  | `4.2`              |
 | `asistencia`         | `int`     | `90`               |
+
+
+------------------------------------------------------------------
+
+Fundamentación Teórica y Diseño de Colscript:
+
+El diseño y la implementación del lenguaje de programación Colscript se sustentan en los principios formales de la Ciencia de la Computación, específicamente en la teoría de lenguajes formales, autómatas y la fase de análisis sintáctico y léxico de los compiladores. Las bases técnicas para definir su estructura se derivan principalmente de dos obras cumbres de la literatura informática:
+1. "Introduction to Automata Theory, Languages, and Computation" (John E. Hopcroft, Rajeev Motwani, Jeffrey D. Ullman) [Introduction to Automata Theory, Languages, and Computation en Wikipedia].
+2. "Compilers: Principles, Techniques, and Tools" (Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman) — conocido globalmente como el Libro del Dragón.
+
+1. Origen del Alfabeto, Palabras Clave y Tokens
+En el Capítulo 1 ("Automata: The Methods and the Madness") de Hopcroft et al., se establece que un lenguaje formal se construye a partir de un alfabeto, que es un conjunto finito de símbolos. En Colscript, este alfabeto abstracto se materializa mediante el análisis léxico descrito en el Capítulo 3 ("Lexical Analysis") del libro de Aho et al.
+La teoría de compiladores define que el texto fuente debe ser fragmentado en unidades lógicas llamadas tokens (identificadores, operadores, constantes) y palabras clave (keywords). 
+
+2. Definición de la Sintaxis y Operadores
+La estructura de las sentencias de Colscript (como las estructuras condicionales y los bucles) se fundamenta en las Gramáticas Libres de Contexto (GLC), detalladas de forma exhaustiva en el Capítulo 5 ("Context-Free Grammars and Languages") de Hopcroft, Motwani y Ullman. La sintaxis de un lenguaje define cómo se agrupan los tokens para formar instrucciones válidas.
+En nuestro lenguaje, expresiones lógicas como si (calor >= 30 y_aparte cobija == sisas) siguen estrictamente las reglas de derivación gramatical. La precedencia de los operadores lógicos (y, y_aparte, o_de_pronto) y de comparación (==, >=, <) se hereda de los modelos jerárquicos de análisis sintáctico expuestos en el Capítulo 4 ("Syntax Analysis") del libro de Aho y Ullman, garantizando que el árbol de análisis sintáctico (parse tree) evalúe las operaciones matemáticas y booleanas sin ninguna ambigüedad.
+
+3. Validación Matemática de las 15 Reglas Gramaticales
+Las 15 reglas provistas en la especificación de Colscript representan las producciones formales de nuestra gramática. Según el Capítulo 4 de Hopcroft et al., las propiedades de los lenguajes libres de contexto permiten demostrar matemáticamente si una cadena pertenece o no a un lenguaje.
+Cada una de nuestras 15 reglas de ejemplo es un reflejo de una producción válida de la gramática formal de Colscript. Por ejemplo, la regla que define la estructura del mientracas (bucle) o la combinación secuencial de declaraciones (tenga) seguida de condicionales anidados, requiere un análisis de reconocimiento sintáctico predictivo (como un analizador LL o LR). La teoría formal nos asegura que cuando el compilador o intérprete de Colscript analiza estas 15 estructuras, la máquina abstracta sabrá con precisión milimétrica cuándo el código es semánticamente correcto o cuándo debe arrojar un error de sintaxis debido a una violación de las reglas de producción del lenguaje.
