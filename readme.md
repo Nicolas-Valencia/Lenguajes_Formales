@@ -243,3 +243,57 @@ En nuestro lenguaje, expresiones lógicas como si (calor >= 30 y_aparte cobija =
 3. Validación Matemática de las 15 Reglas Gramaticales
 Las 15 reglas provistas en la especificación de Colscript representan las producciones formales de nuestra gramática. Según el Capítulo 4 de Hopcroft et al., las propiedades de los lenguajes libres de contexto permiten demostrar matemáticamente si una cadena pertenece o no a un lenguaje.
 Cada una de nuestras 15 reglas de ejemplo es un reflejo de una producción válida de la gramática formal de Colscript. Por ejemplo, la regla que define la estructura del mientracas (bucle) o la combinación secuencial de declaraciones (tenga) seguida de condicionales anidados, requiere un análisis de reconocimiento sintáctico predictivo (como un analizador LL o LR). La teoría formal nos asegura que cuando el compilador o intérprete de Colscript analiza estas 15 estructuras, la máquina abstracta sabrá con precisión milimétrica cuándo el código es semánticamente correcto o cuándo debe arrojar un error de sintaxis debido a una violación de las reglas de producción del lenguaje.
+
+---
+
+## 📐 Gramática BNF
+
+```
+<sentencia> ::= <declaracion> | <declaracion_condicional> | <asignacion> | <condicional> | <ciclo> | <impresion>
+
+<declaracion> ::= "tenga" <identificador> "=" <valor> ";"
+
+<declaracion_condicional> ::= "tenga" <identificador> "=" <valor> "si" <expresion> <bloque>
+
+<asignacion> ::= <identificador> "=" <expresion> [ ";" ]
+
+<condicional> ::= "si" "(" <expresion> ")" <bloque> [ <alternativa> ]
+
+<alternativa> ::= "sino" <bloque> | "o_entonces" "si" "(" <expresion> ")" <bloque> | "o_entonces" <bloque>
+
+<bloque> ::= "{" <sentencias> "}"
+
+<ciclo> ::= "mientracas" "(" <expresion> ")" <bloque>
+
+<impresion> ::= "cantelas" "(" <expresion> ")" ";"
+
+<expresion> ::= <expresion_or>
+
+<expresion_or> ::= <expresion_and> | <expresion_and> "o_de_pronto" <expresion_or>
+
+<expresion_and> ::= <comparacion> | <comparacion> "y" <expresion_and> | <comparacion> "y_aparte" <expresion_and>
+
+<comparacion> ::= <operando> <operador_comparacion> <operando> | "(" <expresion> ")" | <operando>
+
+<operando> ::= <valor> | <valor> "+" <operando>
+
+<operador_comparacion> ::= "==" | ">=" | "<"
+
+<valor> ::= <numero> | <texto> | "sisas" | "nonas" | <identificador>
+
+<numero> ::= <entero> | <entero> "." <entero>
+
+<identificador> ::= <letra> { <letra> | <digito> | "_" }
+
+<entero> ::= <digito> { <digito> }
+
+<digito> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+<letra> ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+
+<texto> ::= '"' { <caracter> } '"'
+
+<caracter> ::= <letra> | <mayuscula> | <digito> | " " | "," | "." | "!" | "?" | "á" | "é" | "í" | "ó" | "ú" | "ñ"
+
+<mayuscula> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z"
+```
