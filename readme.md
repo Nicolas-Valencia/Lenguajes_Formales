@@ -271,7 +271,7 @@ Cada una de nuestras 15 reglas de ejemplo es un reflejo de una producción váli
 
 <expresion_and> ::= <comparacion> | <comparacion> "y_aparte" <expresion_and>
 
-<comparacion> ::= <operando> ( "==" | "!=" ) <operando> | <operando_num> ( ">=" | "<=" | ">" | "<" ) <operando_num> | "(" <expresion> ")"
+<comparacion> ::= <operando> ( "==" | "!=" ) <operando> | <operando_num> ( ">=" | "<=" | ">" | "<" ) <operando_num> | "(" <expresion> ")" | <operando>
 
 <operando> ::= <valor> | <valor> "+" <operando> | "(" <expresion> ")"
 
