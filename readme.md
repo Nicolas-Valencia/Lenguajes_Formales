@@ -271,13 +271,25 @@ Cada una de nuestras 15 reglas de ejemplo es un reflejo de una producción váli
 
 <expresion_and> ::= <comparacion> | <comparacion> "y_aparte" <expresion_and>
 
-<comparacion> ::= <operando> ( "==" | "!=" ) <operando> | <operando_num> ( ">=" | "<=" | ">" | "<" ) <operando_num> | "(" <expresion> ")" | <operando>
+<comparacion> ::= <comparacion_num>
+                | <comparacion_texto>
+                | <comparacion_booleano>
+                | "(" <expresion> ")"
+                | <operando>
+
+<comparacion_num> ::= <op_num> ( "==" | "!=" | ">=" | "<=" | ">" | "<" ) <op_num>
+
+<comparacion_texto> ::= <op_texto> ( "==" | "!=" ) <op_texto>
+
+<comparacion_booleano> ::= <op_booleano> ( "==" | "!=" ) <op_booleano>
+
+<op_num> ::= <numero> | <identificador>
+
+<op_texto> ::= <texto> | <identificador>
+
+<op_booleano> ::= <booleano> | <identificador>
 
 <operando> ::= <valor> | <valor> "+" <operando> | "(" <expresion> ")"
-
-<operando_num> ::= <numero> | <identificador>
-
-<operador_comparacion> ::= "==" | "!=" | ">=" | "<=" | ">" | "<"
 
 <valor> ::= <numero> | <texto> | <booleano> | <identificador>
 
