@@ -249,11 +249,9 @@ Cada una de nuestras 15 reglas de ejemplo es un reflejo de una producción váli
 ## 📐 Gramática BNF
 
 ```
-<sentencia> ::= <declaracion> | <declaracion_condicional> | <asignacion> | <condicional> | <ciclo> | <impresion>
+<sentencia> ::= <declaracion> | <asignacion> | <condicional> | <ciclo> | <impresion>
 
 <declaracion> ::= "tenga" <identificador> "=" <valor> ";"
-
-<declaracion_condicional> ::= "tenga" <identificador> "=" <valor> "si" <expresion> <bloque>
 
 <asignacion> ::= <identificador> "=" <expresion> [ ";" ]
 
@@ -261,7 +259,7 @@ Cada una de nuestras 15 reglas de ejemplo es un reflejo de una producción váli
 
 <alternativa> ::= "sino" <bloque> | "o_entonces" "si" "(" <expresion> ")" <bloque> | "o_entonces" <bloque>
 
-<bloque> ::= "{" <sentencias> "}"
+<bloque> ::= "{" <sentencia> { <sentencia> } "}"
 
 <ciclo> ::= "mientracas" "(" <expresion> ")" <bloque>
 
@@ -271,17 +269,21 @@ Cada una de nuestras 15 reglas de ejemplo es un reflejo de una producción váli
 
 <expresion_or> ::= <expresion_and> | <expresion_and> "o_de_pronto" <expresion_or>
 
-<expresion_and> ::= <comparacion> | <comparacion> "y" <expresion_and> | <comparacion> "y_aparte" <expresion_and>
+<expresion_and> ::= <comparacion> | <comparacion> "y_aparte" <expresion_and>
 
-<comparacion> ::= <operando> <operador_comparacion> <operando> | "(" <expresion> ")" | <operando>
+<comparacion> ::= <operando> ( "==" | "!=" ) <operando> | <operando_num> ( ">=" | "<=" | ">" | "<" ) <operando_num> | "(" <expresion> ")"
 
-<operando> ::= <valor> | <valor> "+" <operando>
+<operando> ::= <valor> | <valor> "+" <operando> | "(" <expresion> ")"
 
-<operador_comparacion> ::= "==" | ">=" | "<"
+<operando_num> ::= <numero> | <identificador>
 
-<valor> ::= <numero> | <texto> | "sisas" | "nonas" | <identificador>
+<operador_comparacion> ::= "==" | "!=" | ">=" | "<=" | ">" | "<"
 
-<numero> ::= <entero> | <entero> "." <entero>
+<valor> ::= <numero> | <texto> | <booleano> | <identificador>
+
+<booleano> ::= "sisas" | "nonas"
+
+<numero> ::= <entero> [ "." [ <entero> ] ]
 
 <identificador> ::= <letra> { <letra> | <digito> | "_" }
 
