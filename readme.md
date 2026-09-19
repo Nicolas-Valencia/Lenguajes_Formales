@@ -275,7 +275,6 @@ Cada una de nuestras 15 reglas de ejemplo es un reflejo de una producción váli
                 | <comparacion_texto>
                 | <comparacion_booleano>
                 | "(" <expresion> ")"
-                | <operando>
 
 <comparacion_num> ::= <op_num> ( "==" | "!=" | ">=" | "<=" | ">" | "<" ) <op_num>
 
@@ -283,13 +282,17 @@ Cada una de nuestras 15 reglas de ejemplo es un reflejo de una producción váli
 
 <comparacion_booleano> ::= <op_booleano> ( "==" | "!=" ) <op_booleano>
 
-<op_num> ::= <numero> | <identificador>
+<op_num> ::= <numero> | <identificador_num>
 
-<op_texto> ::= <texto> | <identificador>
+<op_texto> ::= <texto> | <identificador_texto>
 
-<op_booleano> ::= <booleano> | <identificador>
+<op_booleano> ::= <booleano> | <identificador_booleano>
 
-<operando> ::= <valor> | <valor> "+" <operando> | "(" <expresion> ")"
+<identificador_num> ::= <identificador>
+
+<identificador_texto> ::= <identificador>
+
+<identificador_booleano> ::= <identificador>
 
 <valor> ::= <numero> | <texto> | <booleano> | <identificador>
 
