@@ -4,7 +4,7 @@
 ### Valencia | Ángel | Rincón
 
 
-## � ¿Qué es `scriptcol`?
+## � ¿Qué es `colscript`?
 
 `scriptcol` es un lenguaje de programación de sintaxis declarativa inspirado en el español. Su diseño prioriza la legibilidad natural, permitiendo que las instrucciones se lean de forma cercana al lenguaje cotidiano sin perder la estructura formal de un lenguaje de programación.
 
@@ -15,6 +15,7 @@
 | Palabra      | Significado                              |
 |--------------|------------------------------------------|
 | `tenga`      | Declaración de variable                  |
+| `guarde`     | Declaración de constante
 | `si`         | Condicional `if`                         |
 | `sino`       | Rama `else`                              |
 | `o_entonces` | Rama `else if` / `otherwise`             |
@@ -22,6 +23,7 @@
 | `cantelas`   | Imprimir en pantalla                     |
 | `sisas`      | Verdadero (`true`)                       |
 | `nonas`      | Falso (`false`)                          |
+| `le_cuento`  | Comentario                               |
 
 ---
 
